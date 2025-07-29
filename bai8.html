@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guessing number</title>
+  </head>
+  <body>
+    <button onclick="startGame()">Press the button to start !</button>
+    <script>
+      function startGame() {
+        let inputNumber = Number(
+          prompt("Ok let's me know the hightest number in your range !")
+        );
+        if (isNaN(inputNumber)) {
+          alert("It must be a number. Please try again!");
+          return;
+        }
+        let randomNumber = Math.floor(Math.random() * inputNumber) + 1;
+        let trail = 0;
+        let maxTrail = 3;
+        let guessingNumber;
+        console.log(randomNumber);
+        do {
+          guessingNumber = Number(
+            prompt(`Trails ${trail + 1} is the number are you going to guess??`)
+          );
+
+          if (isNaN(guessingNumber)) {
+            alert("It must be a number. Please try again!");
+            continue;
+          }
+
+          trail++;
+
+          if (guessingNumber < randomNumber) {
+            alert(`The answer is lower. Make it higher!. You guessed ${trail}`);
+          } else if (guessingNumber > randomNumber) {
+            alert(`The answer is higher. Make it lower!. You guessed ${trail}`);
+          } else if (guessingNumber === randomNumber) {
+            alert(`You won the game. Congratulations !!!`);
+            break;
+          }
+        } while (guessingNumber !== randomNumber && trail < maxTrail);
+        if (guessingNumber !== randomNumber) {
+          alert(
+            `out of ${maxTrail}. You tried your best, don't give up. The correct answer was ${randomNumber} !!!`
+          );
+        }
+      }
+
+      startGame();
+    </script>
+  </body>
+</html>

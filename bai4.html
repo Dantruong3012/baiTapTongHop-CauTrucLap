@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bai tap fib chia het cho 5</title>
+  </head>
+  <body>
+    <script>
+      function start() {
+        let a = 0,
+          b = 1;
+        while (true) {
+          let next = a + b;
+          a = b;
+          b = next;
+          if (next % 5 === 0) {
+            document.write("so dau tien trong fib chia het cho 5 la: ", +next);
+            break;
+          }
+        }
+      }
+      start();
+    </script>
+  </body>
+</html>

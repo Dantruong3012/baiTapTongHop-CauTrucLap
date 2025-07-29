@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính tổng của 20 số đầu tiên</title>
+  </head>
+  <body>
+    <script>
+      function myFuction() {
+        let fib = [0, 1];
+        let sum = fib[0] + fib[1];
+        for (let i = 2; i < 20; i++) {
+          fib[i] = fib[i - 1] + fib[i - 2];
+          sum += fib[i];
+        }
+        document.write("tong cua 20 so dau tien la: " + sum);
+      }
+      myFuction();
+    </script>
+  </body>
+</html>

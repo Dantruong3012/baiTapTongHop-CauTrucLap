@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nhiet do</title>
+  </head>
+  <body>
+    <script>
+      function myFuction() {
+        let inputTemperture;
+        for (i = 0; i < 100; i++) {
+          inputTemperture = Number(prompt("vui long nhap nhiet do!"));
+          if (inputTemperture < 20) {
+            alert("vui long tang nhiet do!");
+          } else if (inputTemperture > 100) {
+            alert("vui long giam nhiet do!");
+          } else if (inputTemperture > 20 && inputTemperture < 100) {
+            alert("nhiet do hoan hao!");
+            break;
+          }
+        }
+      }
+      myFuction();
+    </script>
+  </body>
+</html>
